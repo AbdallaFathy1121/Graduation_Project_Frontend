@@ -524,46 +524,30 @@
       var next_items = jQuery('.pq-grid').data('next_items');
    }
 
-
-   /*==================================================
-   [ counter ]
-   ==================================================*/
-   jQuery('.timer').countTo();
-
-
-   //////////////////////////////////////////////////////
+   //////////////////////////////////////////////////////////////////////////
 
    // Model
 
-   var modal = document.getElementById("myModel");
-   // Get the <span> element that closes the modal
-   var span = document.getElementsByClassName("close")[0];
-
-   $("#openModel").on('click', function() {
-      $("#myModel").css('display', 'block');
-      $("#myModel .modal-content").animate({
-         top: 0
-      }, 300);
-   });
-
-   // When the user clicks on <span> (x), close the modal
-   span.onclick = function() {
-      $("#myModel").css('display', 'none');
-      $("#myModel .modal-content").animate({
-         top: '-300px'
-      }, 300);
-   }
-
-   // When the user clicks anywhere outside of the modal, close it
-   window.onclick = function(event) {
-      if (event.target == modal) {
-         $("#myModel").css('display', 'none');
-         $("#myModel .modal-content").animate({
-            top: '-300px'
-         }, 300);
-      }
-   }
-
+   $(".model .tabs li").click(function () {
+      $(this).addClass("active").siblings().removeClass("active");
+    });
+    //Historical For Modle
+    $(".model .tabs .model_1").click(function () {
+      $(".model .pages .page").removeClass("active");
+      $(".model .pages .model_1").addClass("active");
+    });
+    //Dashboard
+    
+    $(".model .tabs .model_2").click(function () {
+      $(".model .pages .page").removeClass("active");
+      $(".model .pages .model_2").addClass("active");
+    });
+    //historical For Hardware 
+    $(".model .tabs .model_3").click(function () {
+      $(".model .pages .page").removeClass("active");
+      $(".model .pages .model_3").addClass("active");
+    });
+    
    //////////////////////////////////////////////////////////////////////////
 
    // Upload Image
@@ -615,12 +599,12 @@
     reader.readAsDataURL(file);
         reader.onload = () => {
           thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-          $("#imgForm").submit();
         };
       } else {
         thumbnailElement.style.backgroundImage = null;
       }
     } 
+
     
 
 })(jQuery);
