@@ -33,23 +33,6 @@
 
       var Scrollbar = window.Scrollbar;
 
-
-      /*==================================================
-      [ Search Button ]
-      ==================================================*/
-      jQuery('#pq-seacrh-btn').on('click', function () {
-         jQuery('.pq-search-form').slideToggle();
-         jQuery('.pq-search-form').toggleClass('pq-form-show');
-         if (jQuery('.pq-search-form').hasClass("pq-form-show")) {
-            jQuery(this).html('<i class="fas fa-times"></i>');
-         } else {
-            jQuery(this).html('<i class="ti-search"></i>');
-         }
-
-
-      });
-
-
       /*==================================================
       [ Accordion ]
       ==================================================*/

@@ -2438,18 +2438,19 @@ Sidebar Menu
   width: 233px;
 }
 
-
 /*=================================================
 Breadcrumb
 =================================================*/
+
 .pq-breadcrumb {
+  background-image: url('../rev/assets/3-2.jpg') !important;
   background: var(--grey-color);
   color: var(--white-color);
   padding: 130px 0;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
 }
 
 .pq-breadcrumb nav {
@@ -3362,23 +3363,9 @@ Fancybox
   font-weight: 600;
 }
 
-.pq-fancy-box.pq-style-1 .pq-fancy-box-icon i {
-  font-size: 64px;
-  line-height: 72px;
-  transition: all 0.5s ease;
-  display: inline-block;
-  color: var(--primary-color);
-}
-
-.pq-fancy-box.pq-style-1:hover .pq-fancy-box-icon i {
-  transform: rotateY(180deg);
-  transition: all 0.5s ease;
-}
-
 .pq-fancy-box.pq-style-1 .pq-fancybox-description {
   margin-bottom: 15px;
 }
-
 
 .pq-fancy-box.pq-style-2 .pq-fancy-img {
   position: relative;
@@ -5901,7 +5888,6 @@ rev-slider
   background: #2490eb;
 }
 
-
 /*==================================================
 Custom Css
 ==================================================*/
@@ -6414,6 +6400,83 @@ a {
   color: rgb(67, 166, 232);
 }
 
+.account .pages .dashboard .info .right .box {
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  padding: 25px 20px;
+}
+
+.account .pages .dashboard .info ul {
+  padding: 0 !important;
+}
+
+.account .pages .dashboard .info ul li {
+  padding: 14px 0;
+  border-bottom: 1px solid #dadada;
+}
+
+.account .pages .dashboard .info img {
+  height: 200px;
+}
+
+.account .pages .dashboard .info .add-image {
+  height: 200px;
+  width: 100%;
+  border: 3px var(--primary-dark-color);
+  border-style: dashed;
+  margin: 0 !important;
+  position: relative;
+  border-radius: 4px;
+  background-color: var(--grey-color);
+}
+
+.account .pages .dashboard .info .add-image .icon {
+  width: auto !important;
+  position: absolute;
+  z-index: 1;
+  color: var(--primary-dark-color);
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.account .pages .dashboard .info .add-image #add_image {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pq-fancy-box.pq-style-1 img {
+  transition: all 0.5s;
+  width: 60px;
+}
+.pq-fancy-box.pq-style-1:hover img {
+  transform: rotateY(180deg);
+}
+
+.account .pages .dashboard .info .left span {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.vbox-content img {
+  max-height: 550px !important;
+  width: auto;
+}
+
+.account .pages .dashboard .info .right .box ul li i {
+  margin-right: 8px;
+}
+
+.account .pages .dashboard .info .right .box .special span {
+  background-color: #dadada;
+  border-radius: 3px;
+  padding: 3px 12px;
+  font-size: 14px;
+  margin-top: 9px;
+  display: inline-block;
+}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -6432,7 +6495,7 @@ a {
   position: relative;
   top: -300px;
   background-color: #fefefe;
-  margin: 10% auto; /* 15% from the top and centered */
+  margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 60%; /* Could be more or less, depending on screen size */
@@ -6484,6 +6547,31 @@ a {
   width: 100%;
   height: 100%;
   padding-left: 50px;
+}
+
+.modal .form-group textarea {
+  padding-left: 50px;
+}
+
+.modal .form-group-select {
+  padding-left: 0;
+  position: relative;
+  height: 100%;
+}
+.modal .form-group-select select {
+  background-color: #7e7e7e12;
+  float: none;
+}
+.modal .form-group-select:after {
+  display: none;
+}
+
+.special-btn {
+  background: var(--primary-dark-color);
+}
+
+.pq-fancybox-description {
+  font-size: 13px !important;
 }
 
 .dashboard .drop-zone {
@@ -6559,6 +6647,15 @@ a {
   background-color: #279fe9;
   color: white;
   padding: 10px 20px;
+}
+.account .pages .dashboard .info .edit_profile1 {
+  background-color: #379237;
+  color: white;
+  padding: 10px 20px;
+}
+
+#myModelDoctor .submit {
+  background-color: #379237 !important;
 }
 
 .account .pages .dashboard .info .edit_profile i {
@@ -6755,7 +6852,7 @@ a {
   outline: 0;
 }
 
-.model_3 select.round {
+select.round {
   background-image:
     linear-gradient(45deg, transparent 50%, gray 50%),
     linear-gradient(135deg, gray 50%, transparent 50%),
@@ -6772,7 +6869,7 @@ a {
   height: 44px;
 }
 
-.model_3 select.round:focus {
+select.round:focus {
   background-image:
     linear-gradient(45deg, white 50%, transparent 50%),
     linear-gradient(135deg, transparent 50%, white 50%),
@@ -6790,7 +6887,7 @@ a {
   outline: 0;
 }
 
-.model_3 select.minimal {
+select.minimal {
   background-image:
     linear-gradient(45deg, transparent 50%, gray 50%),
     linear-gradient(135deg, gray 50%, transparent 50%),
@@ -6806,7 +6903,7 @@ a {
   background-repeat: no-repeat;
 }
 
-.model_3 select.minimal:focus {
+select.minimal:focus {
   background-image:
     linear-gradient(45deg, green 50%, transparent 50%),
     linear-gradient(135deg, transparent 50%, green 50%),
@@ -6824,14 +6921,28 @@ a {
   outline: 0;
 }
 
-.model_3 select:-moz-focusring {
+select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #000;
+}
+
+.account select.round {
+  line-height: normal !important;
 }
 
 .model_3 form .lbl {
   font-weight: bold;
   color: #1d1d1d;
+}
+
+.account input,
+.account textarea {
+  background-color: #7e7e7e12 !important;
+}
+
+.account label {
+  color: #b50000d1;
+  font-weight: bold;
 }
 
 .model_3 form input {

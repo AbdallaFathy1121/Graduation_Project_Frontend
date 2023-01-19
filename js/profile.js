@@ -20,11 +20,38 @@ span.onclick = function () {
   }, 300);
 }
 
+//////////////////////////////////////////////////////////////
+
+// Modal Doctor
+
+var modal1 = document.getElementById("myModelDoctor");
+
+$("#openModelDoctor").on('click', function () {
+  $("#myModelDoctor").css('display', 'block');
+  $("#myModelDoctor .modal-content").animate({
+    top: 0
+  }, 300);
+});
+
+// When the user clicks on <span> (x), close the modal
+$(".colse1").on('click', function () {
+  $("#myModelDoctor").css('display', 'none');
+  $("#myModelDoctor .modal-content").animate({
+    top: '-300px'
+  }, 300);
+});
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
     $("#myModel").css('display', 'none');
     $("#myModel .modal-content").animate({
+      top: '-300px'
+    }, 300);
+  }
+  if (event.target == modal1) {
+    $("#myModelDoctor").css('display', 'none');
+    $("#myModelDoctor .modal-content").animate({
       top: '-300px'
     }, 300);
   }
@@ -57,58 +84,22 @@ $(".account .tabs .hardware").click(function () {
 //////////////////////////////////////////////////////////////////////////
 
 // Upload Image
+$("#userPhoto").on('change', function () {
+  $("#imgForm").submit();
+});
 
-document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
-  const dropZoneElement = inputElement.closest(".drop-zone");
-  dropZoneElement.addEventListener("click", (e) => {
-    inputElement.click();
-  });
-  inputElement.addEventListener("change", (e) => {
-    if (inputElement.files.length) {
-      updateThumbnail(dropZoneElement, inputElement.files[0]);
-    }
-  });
-  dropZoneElement.addEventListener("dragover", (e) => {
-    e.preventDefault();
-    dropZoneElement.classList.add("drop-zone--over");
-  });
-  ["dragleave", "dragend"].forEach((type) => {
-    dropZoneElement.addEventListener(type, (e) => {
-      dropZoneElement.classList.remove("drop-zone--over");
-    });
-  });
-  dropZoneElement.addEventListener("drop", (e) => {
-    e.preventDefault();
-    if (e.dataTransfer.files.length) {
-      inputElement.files = e.dataTransfer.files;
-      updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
-    }
-    dropZoneElement.classList.remove("drop-zone--over");
+// Upload Image
+$("#add_image").on('change', function () {
+  $("#form_add_image").submit();
+});
+
+//////////////////////////////////////////////////////////////////////////
+
+// Veno Box (Photo)
+
+$(document).ready(function () {
+  $('.venobox').venobox({
+    spinner: 'double-bounce',
+    spinColor: '#586bda'
   });
 });
-function updateThumbnail(dropZoneElement, file) {
-  let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-  // First time - remove the prompt
-  if (dropZoneElement.querySelector(".drop-zone__prompt")) {
-    dropZoneElement.querySelector(".drop-zone__prompt").remove();
-  }
-  // First time - there is no thumbnail element, so lets create it
-  if (!thumbnailElement) {
-    thumbnailElement = document.createElement("div");
-    thumbnailElement.classList.add("drop-zone__thumb");
-    dropZoneElement.appendChild(thumbnailElement);
-  }
-  thumbnailElement.dataset.label = file.name;
-  // Show thumbnail for image files
-  if (file.type.startsWith("image/")) {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-      $("#imgForm").submit();
-    };
-  } else {
-    thumbnailElement.style.backgroundImage = null;
-  }
-}
-
