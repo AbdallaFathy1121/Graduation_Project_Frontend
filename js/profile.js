@@ -25,6 +25,7 @@ span.onclick = function () {
 // Modal Doctor
 
 var modal1 = document.getElementById("myModelDoctor");
+var modal2 = document.getElementById("modelAdvice");
 
 $("#openModelDoctor").on('click', function () {
   $("#myModelDoctor").css('display', 'block');
@@ -37,6 +38,21 @@ $("#openModelDoctor").on('click', function () {
 $(".colse1").on('click', function () {
   $("#myModelDoctor").css('display', 'none');
   $("#myModelDoctor .modal-content").animate({
+    top: '-300px'
+  }, 300);
+});
+
+$("#openModelAdvice").on('click', function () {
+  $("#modelAdvice").css('display', 'block');
+  $("#modelAdvice .modal-content").animate({
+    top: 0
+  }, 300);
+});
+
+// When the user clicks on <span> (x), close the modal
+$(".close3").on('click', function () {
+  $("#modelAdvice").css('display', 'none');
+  $("#modelAdvice .modal-content").animate({
     top: '-300px'
   }, 300);
 });
@@ -55,6 +71,12 @@ window.onclick = function (event) {
       top: '-300px'
     }, 300);
   }
+  if (event.target == modal2) {
+    $("#modelAdvice").css('display', 'none');
+    $("#modelAdvice .modal-content").animate({
+      top: '-300px'
+    }, 300);
+  }
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -70,7 +92,6 @@ $(".account .tabs .Modle").click(function () {
   $(".account .pages .Modle").addClass("active");
 });
 //Dashboard
-
 $(".account .tabs .dashboard").click(function () {
   $(".account .pages .page").removeClass("active");
   $(".account .pages .dashboard").addClass("active");
@@ -79,6 +100,11 @@ $(".account .tabs .dashboard").click(function () {
 $(".account .tabs .hardware").click(function () {
   $(".account .pages .page").removeClass("active");
   $(".account .pages .hardware").addClass("active");
+});
+// My Advices
+$(".account .tabs .my_advices").click(function () {
+  $(".account .pages .page").removeClass("active");
+  $(".account .pages .my_advices").addClass("active");
 });
 
 //////////////////////////////////////////////////////////////////////////
